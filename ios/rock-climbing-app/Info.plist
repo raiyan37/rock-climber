@@ -5,12 +5,14 @@
 	<key>BackendAPIKey</key>
 	<string></string>
 	<key>BackendBaseURL</key>
-	<string>http://localhost:8000</string>
+	<string>http://172.20.10.2:8000</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to your photo library to select photos of climbing routes for analysis.</string>
 	<key>NSServices</key>
 	<array>
 		<dict/>

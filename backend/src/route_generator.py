@@ -94,6 +94,9 @@ class RouteGenerator:
     def __prepare_new_position(self, climber: Climber,
                                holds_for_first_step: [DetectedObject],
                                holds_for_second_step: [DetectedObject]) -> None:
+        if not holds_for_first_step or not holds_for_second_step:
+            raise ValueError("No holds available to place starting steps")
+
         starting_step_1_id = np.random.choice(len(holds_for_first_step), 1, replace=False)[0]
         starting_step_1 = holds_for_first_step[starting_step_1_id]
 
@@ -243,6 +246,9 @@ class RouteGenerator:
         holds = [hold for hold in holds
                  if hold.center.x < body_center]
 
+        if not holds:
+            raise ValueError("No holds available for left arm")
+
         random_left_arm_hold_id = np.random.choice(len(holds), 1, replace=False)[0]
         random_left_arm_hold = holds[random_left_arm_hold_id]
 
@@ -268,6 +274,9 @@ class RouteGenerator:
         holds = [hold for hold in holds
                  if hold.center.x > body_center]
 
+        if not holds:
+            raise ValueError("No holds available for right arm")
+
         random_right_arm_hold_id = np.random.choice(len(holds), 1, replace=False)[0]
         random_right_arm_hold = holds[random_right_arm_hold_id]
 
@@ -289,6 +298,9 @@ class RouteGenerator:
             radius=radius,
             exclude_detected_objects=exclude_detected_objects
         )
+
+        if not holds_in_circle:
+            raise ValueError("No holds available in reach")
 
         object_detect_id = np.random.choice(len(holds_in_circle), 1, replace=False)[0]
         return holds_in_circle[object_detect_id]

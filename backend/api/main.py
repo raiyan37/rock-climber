@@ -41,10 +41,16 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
         detected_objects=detected_objects
     )
 
-    positions = route_generator.generate_route(
-        climber_height_in_cm=config.CLIMBER_HEIGHT_IN_CM,
-        starting_steps_max_distance_from_ground_in_cm=config.STARTING_STEPS_MAX_DISTANCE_FROM_GROUND_IN_CM
-    )
+    try:
+        positions = route_generator.generate_route(
+            climber_height_in_cm=config.CLIMBER_HEIGHT_IN_CM,
+            starting_steps_max_distance_from_ground_in_cm=config.STARTING_STEPS_MAX_DISTANCE_FROM_GROUND_IN_CM
+        )
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(exc)
+        ) from exc
 
     for climber_position in positions:
         img = image_utils.draw_climber(

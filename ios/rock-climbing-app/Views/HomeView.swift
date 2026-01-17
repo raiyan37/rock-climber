@@ -41,10 +41,27 @@ struct HomeView: View {
                         )
                         
                         QuickActionCard(
+                            title: "Photo Library",
+                            icon: "photo.fill",
+                            color: .purple,
+                            destination: AnyView(PhotoLibraryView())
+                        )
+                    }
+                    .padding(.horizontal)
+                    
+                    HStack(spacing: 15) {
+                        QuickActionCard(
                             title: "Record Climb",
                             icon: "video.fill",
                             color: .green,
                             destination: AnyView(ClimbRecordingView())
+                        )
+                        
+                        QuickActionCard(
+                            title: "Progress",
+                            icon: "chart.line.uptrend.xyaxis",
+                            color: .orange,
+                            destination: AnyView(ProgressDashboardView())
                         )
                     }
                     .padding(.horizontal)
