@@ -122,7 +122,7 @@ struct HomeView: View {
             }
             .padding(.top)
         }
-        .navigationTitle("Send")
+        .navigationTitle("Send.")
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.large)
         #endif

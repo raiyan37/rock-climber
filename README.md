@@ -1,8 +1,20 @@
 # Send
 
-This repo contains:
+A climbing app where you snap a photo of any wall and instantly see optimal routes mapped out using OpenCV. Track your climbs, record attempts, and build your climbing portfolio with computer vision route detection.
+
+## Overview
+
+Send combines YOLO-based hold detection with intelligent route planning to help climbers visualize paths up any wall. The app includes session tracking, progress analytics, and real-time climb recording to help you improve your technique and reach your goals.
+
+**Tech Stack:**
+- Backend: Python, FastAPI, YOLO (Ultralytics), OpenCV
+- iOS: SwiftUI, AVFoundation
+- CV Pipeline: Hold detection, ArUco marker calibration, bottom-to-top route planning
+
+## Repository Structure
+
 - `backend/`: FastAPI service that takes a climbing wall image, detects holds (YOLO), calibrates scale using an ArUco marker, and returns an annotated PNG route overlay.
-- `ios/`: SwiftUI iOS client (currently mostly UI scaffolding / placeholders).
+- `ios/`: SwiftUI iOS client with camera capture, route visualization, and progress tracking.
 
 ## Backend quickstart
 
