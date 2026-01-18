@@ -39,10 +39,16 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
     Generate a boulder route from an image.
 
     For now, the route planner assumes a simple bottom-to-top progression.
+    Generate a boulder route from an image.
+
+    For now, the route planner assumes a simple bottom-to-top progression.
     """
+    started = time.perf_counter()
     started = time.perf_counter()
     contents = await file.read()
 
+    validate_file(file, contents)
+    print(f"[boulder/generate] received filename={file.filename} content_type={file.content_type} bytes={len(contents)}")
     validate_file(file, contents)
     print(f"[boulder/generate] received filename={file.filename} content_type={file.content_type} bytes={len(contents)}")
 
@@ -50,10 +56,24 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
     img = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
     if img is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid image file")
+    if img is None:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid image file")
 
     img = imutils.resize(img, width=1216)
 
     try:
+        detected_objects = objects_detector.detect(img)
+    except FileNotFoundError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(exc),
+        ) from exc
+
+    try:
+        route_holds = plan_bottom_to_top_route(
+            detected_objects,
+            img_width=img.shape[1],
+            img_height=img.shape[0],
         detected_objects = objects_detector.detect(img)
     except FileNotFoundError as exc:
         raise HTTPException(
@@ -100,9 +120,37 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
             end_point=end_hold.center,
             color=config.ROUTE_LINE_COLOR,
             line_width=config.ROUTE_LINE_WIDTH,
+    img = image_utils.draw_bboxes(
+        img=img,
+        detected_objects=detected_objects,
+        bbox_color=config.BBOX_COLOR,
+        bbox_center_color=config.BBOX_CENTER_COLOR,
+        line_width=config.LINE_WIDTH,
+        draw_labels=False,
+        draw_centers=False,
+    )
+
+    img = image_utils.draw_bboxes(
+        img=img,
+        detected_objects=route_holds,
+        bbox_color=config.PROBLEM_STEP_BBOX_COLOR,
+        bbox_center_color=config.BBOX_CENTER_COLOR,
+        line_width=config.LINE_WIDTH,
+        draw_labels=False,
+        draw_centers=True,
+    )
+
+    for start_hold, end_hold in zip(route_holds, route_holds[1:]):
+        img = image_utils.draw_line(
+            img=img,
+            start_point=start_hold.center,
+            end_point=end_hold.center,
+            color=config.ROUTE_LINE_COLOR,
+            line_width=config.ROUTE_LINE_WIDTH,
         )
 
     _, im_png = cv2.imencode(".png", img)
+    print(f"[boulder/generate] done in {time.perf_counter() - started:.2f}s")
     print(f"[boulder/generate] done in {time.perf_counter() - started:.2f}s")
     return StreamingResponse(io.BytesIO(im_png.tobytes()), media_type="image/png")
 
@@ -193,5 +241,7 @@ def validate_file(file: UploadFile) -> None:
             detail="Unsupported file type",
         )
 
+    if len(contents) > config.MAXIMUM_FILE_SIZE:
+        raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="Too large")
     if len(contents) > config.MAXIMUM_FILE_SIZE:
         raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="Too large")
