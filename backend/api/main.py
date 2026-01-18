@@ -12,7 +12,7 @@ from google.oauth2 import id_token
 from pydantic import BaseModel
 from starlette.responses import StreamingResponse
 
-from src import config, image_utils, objects_detector
+from src import config, hold_color, image_utils, objects_detector
 from src.route_planner import plan_bottom_to_top_route
 
 from . import session_store
@@ -74,11 +74,58 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
         ) from exc
 
     try:
-        route_holds = plan_bottom_to_top_route(
-            detected_objects,
-            img_width=img.shape[1],
-            img_height=img.shape[0],
-        )
+        img_width = img.shape[1]
+        img_height = img.shape[0]
+
+        holds = [obj for obj in detected_objects if obj.class_name == "hold"]
+        selected_group_id: int | None = None
+        if holds:
+            hold_color.annotate_hold_colors(img, holds)
+            group_id_to_label = hold_color.assign_color_groups(holds)
+            groups = hold_color.group_holds_by_color_group(holds)
+
+            best_route: list | None = None
+            best_score: tuple[int, ...] | None = None
+            for group_id, group_holds in groups.items():
+                if len(group_holds) < 3:
+                    continue
+                if group_id_to_label.get(group_id, "unknown") == "unknown":
+                    continue
+
+                candidate_route = plan_bottom_to_top_route(
+                    group_holds,
+                    img_width=img_width,
+                    img_height=img_height,
+                )
+                vertical_gain = candidate_route[0].center.y - candidate_route[-1].center.y
+                top_y = int(round(img_height * 0.12))
+                bottom_y = int(round(img_height * 0.80))
+                has_top = any(h.center.y <= top_y for h in group_holds)
+                has_bottom = any(h.center.y >= bottom_y for h in group_holds)
+                score = (
+                    0 if has_bottom else 1,
+                    0 if has_top else 1,
+                    -len(candidate_route),
+                    -vertical_gain,
+                    candidate_route[-1].center.y,
+                    -len(group_holds),
+                )
+                if best_score is None or score < best_score:
+                    best_score = score
+                    best_route = candidate_route
+                    selected_group_id = group_id
+
+            route_holds = best_route or plan_bottom_to_top_route(
+                detected_objects,
+                img_width=img_width,
+                img_height=img_height,
+            )
+        else:
+            route_holds = plan_bottom_to_top_route(
+                detected_objects,
+                img_width=img_width,
+                img_height=img_height,
+            )
     except ValueError as exc:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
 
@@ -91,6 +138,18 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
         draw_labels=False,
         draw_centers=False,
     )
+
+    if holds and selected_group_id is not None:
+        selected_group_holds = [h for h in holds if h.color_group == selected_group_id]
+        img = image_utils.draw_bboxes(
+            img=img,
+            detected_objects=selected_group_holds,
+            bbox_color=config.SELECTED_COLOR_GROUP_BBOX_COLOR,
+            bbox_center_color=config.BBOX_CENTER_COLOR,
+            line_width=config.LINE_WIDTH,
+            draw_labels=False,
+            draw_centers=False,
+        )
 
     img = image_utils.draw_bboxes(
         img=img,
