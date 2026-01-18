@@ -78,11 +78,10 @@
 
 /* Begin PBXNativeTarget section */
 			38651E802F1BF0FA00AEFD55 /* rock-climbing-app */ = {
-			38651E802F1BF0FA00AEFD55 /* rock-climbing-app */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 38651E8E2F1BF0FC00AEFD55 /* Build configuration list for PBXNativeTarget "rock-climbing-app" */;
-			buildPhases = (
-				38651E7D2F1BF0FA00AEFD55 /* Sources */,
+				isa = PBXNativeTarget;
+				buildConfigurationList = 38651E8E2F1BF0FC00AEFD55 /* Build configuration list for PBXNativeTarget "rock-climbing-app" */;
+				buildPhases = (
+					38651E7D2F1BF0FA00AEFD55 /* Sources */,
 				38651E7E2F1BF0FA00AEFD55 /* Frameworks */,
 				38651E7F2F1BF0FA00AEFD55 /* Resources */,
 			);
