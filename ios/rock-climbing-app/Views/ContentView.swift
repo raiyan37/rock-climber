@@ -25,20 +25,12 @@ struct ContentView: View {
                 .tag(0)
                 
                 NavigationView {
-                    FeedView()
-                }
-                .tabItem {
-                    Label("Feed", systemImage: "rectangle.stack.fill")
-                }
-                .tag(1)
-                
-                NavigationView {
                     CameraView()
                 }
                 .tabItem {
                     Label("Camera", systemImage: "camera.fill")
                 }
-                .tag(2)
+                .tag(1)
                 
                 NavigationView {
                     ProgressDashboardView()
@@ -46,7 +38,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
                 }
-                .tag(3)
+                .tag(2)
                 
                 NavigationView {
                     ProfileView()
@@ -54,7 +46,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
-                .tag(4)
+                .tag(3)
             }
         }
     }

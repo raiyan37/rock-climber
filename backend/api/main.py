@@ -4,13 +4,21 @@ import imutils
 import numpy as np
 
 from fastapi import FastAPI, UploadFile, HTTPException, status
+from pydantic import BaseModel
 from starlette.responses import StreamingResponse
 
 from src import config, image_utils, objects_detector
 from src.aruco_marker import ArucoMarker
 from src.route_generator import RouteGenerator
+from . import session_store
 
 app = FastAPI(title="Climbing Crux Route Generator")
+
+
+class ClimbEventBody(BaseModel):
+    status: str
+    attempts: int
+    durationSeconds: int
 
 
 @app.post("/boulder/generate")
@@ -62,6 +70,34 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
 
     _, im_png = cv2.imencode(".png", img)
     return StreamingResponse(io.BytesIO(im_png.tobytes()), media_type="image/png")
+
+
+@app.post("/api/users/{user_id}/sessions/today/start")
+def start_today_session(user_id: str) -> dict:
+    session_store.start_today_session(user_id)
+    return session_store.get_today_session_stats(user_id)
+
+
+@app.post("/api/users/{user_id}/sessions/today/end")
+def end_today_session(user_id: str) -> dict:
+    session_store.end_today_session(user_id)
+    return session_store.get_today_session_stats(user_id)
+
+
+@app.get("/api/users/{user_id}/sessions/today")
+def get_today_session(user_id: str) -> dict:
+    return session_store.get_today_session_stats(user_id)
+
+
+@app.post("/api/users/{user_id}/sessions/today/climbs")
+def add_today_climb(user_id: str, body: ClimbEventBody) -> dict:
+    session_store.add_climb_event(
+        user_id=user_id,
+        status=body.status,
+        attempts=body.attempts,
+        duration_seconds=body.durationSeconds,
+    )
+    return session_store.get_today_session_stats(user_id)
 
 
 def validate_file(file: UploadFile) -> None:

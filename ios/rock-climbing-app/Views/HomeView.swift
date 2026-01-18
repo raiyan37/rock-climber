@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var showCamera = false
+    @AppStorage("currentUserId") private var currentUserId = "demo-user"
+    @State private var todayClimbs = 0
+    @State private var todaySends = 0
+    @State private var todayElapsedSeconds = 0
+    @State private var isLoadingSession = false
+    @State private var hasLoadedSession = false
     
     var body: some View {
         ScrollView {
@@ -37,24 +42,7 @@ struct HomeView: View {
                             title: "Scan Route",
                             icon: "camera.fill",
                             color: .blue,
-                            destination: AnyView(CameraView())
-                        )
-                        
-                        QuickActionCard(
-                            title: "Photo Library",
-                            icon: "photo.fill",
-                            color: .purple,
-                            destination: AnyView(PhotoLibraryView())
-                        )
-                    }
-                    .padding(.horizontal)
-                    
-                    HStack(spacing: 15) {
-                        QuickActionCard(
-                            title: "Record Climb",
-                            icon: "video.fill",
-                            color: .green,
-                            destination: AnyView(ClimbRecordingView())
+                            destination: AnyView(ScanRouteHubView())
                         )
                         
                         QuickActionCard(
@@ -74,9 +62,9 @@ struct HomeView: View {
                         .padding(.horizontal)
                     
                     HStack(spacing: 15) {
-                        TodayStatCard(title: "Climbs", value: "8", icon: "figure.climbing")
-                        TodayStatCard(title: "Time", value: "1h 45m", icon: "clock.fill")
-                        TodayStatCard(title: "Sends", value: "6", icon: "checkmark.circle.fill")
+                        TodayStatCard(title: "Climbs", value: "\(todayClimbs)", icon: "figure.climbing")
+                        TodayStatCard(title: "Time", value: timeString(from: todayElapsedSeconds), icon: "clock.fill")
+                        TodayStatCard(title: "Sends", value: "\(todaySends)", icon: "checkmark.circle.fill")
                     }
                     .padding(.horizontal)
                 }
@@ -130,36 +118,6 @@ struct HomeView: View {
                     .padding(.horizontal)
                 }
                 
-                // community highlights
-                VStack(alignment: .leading, spacing: 15) {
-                    HStack {
-                        Text("Community Highlights")
-                            .font(.headline)
-                        
-                        Spacer()
-                        
-                        NavigationLink(destination: FeedView()) {
-                            Text("View Feed")
-                                .font(.subheadline)
-                                .foregroundColor(.blue)
-                        }
-                    }
-                    .padding(.horizontal)
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 15) {
-                            ForEach(0..<5) { index in
-                                CommunityHighlightCard(
-                                    userName: "Climber \(index + 1)",
-                                    route: "V\(5 - index)",
-                                    thumbnailIcon: "photo"
-                                )
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                }
-                
                 Spacer(minLength: 20)
             }
             .padding(.top)
@@ -168,6 +126,43 @@ struct HomeView: View {
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.large)
         #endif
+        .task {
+            if !hasLoadedSession {
+                hasLoadedSession = true
+                await loadTodaySession()
+            }
+        }
+    }
+
+    @MainActor
+    private func loadTodaySession() async {
+        guard !isLoadingSession else { return }
+        isLoadingSession = true
+        defer { isLoadingSession = false }
+        
+        do {
+            let session = try await ReadSessionRequest.startTodaySession(userId: currentUserId)
+            applySession(session)
+        } catch {
+            // keep placeholder values if the backend is unavailable
+        }
+    }
+    
+    private func applySession(_ session: TodaySessionResponseBody) {
+        todayClimbs = session.climbs
+        todaySends = session.sends
+        todayElapsedSeconds = session.elapsedSeconds
+    }
+    
+    private func timeString(from totalSeconds: Int) -> String {
+        guard totalSeconds > 0 else { return "0m" }
+        let totalMinutes = totalSeconds / 60
+        let hours = totalMinutes / 60
+        let minutes = totalMinutes % 60
+        if hours > 0 {
+            return "\(hours)h \(minutes)m"
+        }
+        return "\(minutes)m"
     }
 }
 
@@ -300,41 +295,6 @@ struct GoalProgressCard: View {
         .padding()
         .background(Color.gray.opacity(0.1))
         .cornerRadius(10)
-    }
-}
-
-struct CommunityHighlightCard: View {
-    let userName: String
-    let route: String
-    let thumbnailIcon: String
-    
-    var body: some View {
-        NavigationLink(destination: FeedView()) {
-            VStack(spacing: 8) {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(width: 120, height: 160)
-                    .cornerRadius(10)
-                    .overlay(
-                        Image(systemName: thumbnailIcon)
-                            .font(.title)
-                            .foregroundColor(.white.opacity(0.8))
-                    )
-                
-                VStack(spacing: 3) {
-                    Text(userName)
-                        .font(.caption)
-                        .fontWeight(.semibold)
-                        .lineLimit(1)
-                    
-                    Text(route)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
-                .frame(width: 120)
-            }
-        }
-        .buttonStyle(PlainButtonStyle())
     }
 }
 

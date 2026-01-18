@@ -167,6 +167,15 @@ struct FeedResponseBody: Codable {
     }
 }
 
+// response for HomeView
+// get today's session stats
+struct TodaySessionResponseBody: Codable {
+    var climbs: Int
+    var sends: Int
+    var elapsedSeconds: Int
+    var isActive: Bool
+}
+
 // response for ProfileView
 // get user profile and stats
 struct ProfileResponseBody: Codable {

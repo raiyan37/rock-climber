@@ -13,6 +13,7 @@ struct ClimbRecordingView: View {
     @State private var attemptCount = 1
     @State private var showPoseOverlay = true
     @State private var timer: Timer?
+    @AppStorage("currentUserId") private var currentUserId = "demo-user"
     
     var body: some View {
         ZStack {
@@ -173,7 +174,9 @@ struct ClimbRecordingView: View {
         isRecording = false
         timer?.invalidate()
         timer = nil
-        // TODO: save climb and navigate to analysis
+        Task {
+            await submitClimbEvent()
+        }
     }
     
     private func timeString(from timeInterval: TimeInterval) -> String {
@@ -181,6 +184,21 @@ struct ClimbRecordingView: View {
         let seconds = Int(timeInterval) % 60
         let deciseconds = Int((timeInterval.truncatingRemainder(dividingBy: 1)) * 10)
         return String(format: "%02d:%02d.%01d", minutes, seconds, deciseconds)
+    }
+    
+    @MainActor
+    private func submitClimbEvent() async {
+        let body = ReadSessionRequest.ClimbEventBody(
+            status: .completed,
+            attempts: attemptCount,
+            durationSeconds: Int(elapsedTime)
+        )
+        
+        do {
+            _ = try await ReadSessionRequest.addClimbEvent(userId: currentUserId, body: body)
+        } catch {
+            // ignore errors for now; session updates are non-blocking
+        }
     }
 }
 
