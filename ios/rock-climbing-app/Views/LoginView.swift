@@ -85,6 +85,15 @@ struct LoginView: View {
         isSigningIn = true
         defer { isSigningIn = false }
         
+        // testing mode: bypass google oauth and set dummy values to go straight to home
+        authToken = "test-token-123"
+        currentUserId = "test-user-id"
+        userFirstName = "Test"
+        userLastName = "User"
+        userPhotoURL = ""
+        
+        // original google oauth code (commented out for testing)
+        /*
         guard let clientId = Bundle.main.object(forInfoDictionaryKey: "GoogleClientID") as? String,
               !clientId.isEmpty else {
             errorMessage = "Missing GoogleClientID in Info.plist."
@@ -126,6 +135,7 @@ struct LoginView: View {
                 errorMessage = error.localizedDescription
             }
         }
+        */
     }
 }
 

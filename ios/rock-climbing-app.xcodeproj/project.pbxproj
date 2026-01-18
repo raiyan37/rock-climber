@@ -3,108 +3,89 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 63;
 	objects = {
 
-	/* Begin PBXBuildFile section */
-			782E91412F1C7FA800C6C2FE /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 38651EF02F1C100000AEFD55 /* GoogleSignIn */; };
-			782E91422F1C7FA800C6C2FE /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 38651EF22F1C100000AEFD55 /* GoogleSignInSwift */; };
-			02056EDC67A14FA19016B7CF /* RouteAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C3D7505E14C30B84E1BBA /* RouteAnalysisView.swift */; };
-			0AD9C48F577142BE873EAA75 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD392B78BBD941EF8683F468 /* HomeView.swift */; };
-			12C9D5C95609493C999F0DA8 /* ReadSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B5C4D44634294907024C4 /* ReadSessionRequest.swift */; };
-			1440FB3009204702874F0D5A /* HTTPSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356242CAD59144918A4041CE /* HTTPSetup.swift */; };
-			1EE2E76CC9C74146B773A89E /* AnalysisFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71230A25A945EF80936FFE /* AnalysisFeedbackView.swift */; };
-			2AEEE70289564FB9B02FED7D /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C6913EB8844DDBD5BFDB1 /* UpdateUserRequest.swift */; };
-			2CADDD1811A54E9E925E23B5 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFE54663A342B3ABD70528 /* CreateUserRequest.swift */; };
-			339208401461430BBED115FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562E0EA803C4F6B81D9BF80 /* LoginView.swift */; };
-			36DA3B9183AC40F784716382 /* routeFinderData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A5022F32FAF48EE8BB300EB /* routeFinderData.json */; };
-			4B8A372A8E0C481B8B01D646 /* ReadUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B7A83A043745E4905E1ECD /* ReadUserRequest.swift */; };
-			4E55149410054D9BB7F2F704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD12B9781440AC8F63AF6F /* ContentView.swift */; };
-			52B20462535A4254A7517E8E /* rock_climbing_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC4DB4BEE14651B4406463 /* rock_climbing_appApp.swift */; };
-			674365F67A7A41CC964D9873 /* UpdateClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7797BB93EB4A5BBC958E6E /* UpdateClimbRequest.swift */; };
-			740E5EF93B604DCEB6321DC5 /* ScanRouteHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D470E0C345C4B6DB7E8C952 /* ScanRouteHubView.swift */; };
-			7A420EA7C3C74E9FA3BF66CC /* courseDetailData.json in Resources */ = {isa = PBXBuildFile; fileRef = E2CB1E273E8841B5BF0E8A9B /* courseDetailData.json */; };
-			85BFE9D9589D47E58927C043 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 47915795712E47A9969313A9 /* Settings.bundle */; };
-			866E4F42846A45208EB3D1C3 /* DeleteClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4488FDF8C4B18803CC113 /* DeleteClimbRequest.swift */; };
-			8D92A3D2BECA4A7490C27288 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1513055E844738385CA0F /* Item.swift */; };
-			8DEE45DFCD5648758E181A12 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A6825287493EB933FEE5 /* ModelData.swift */; };
-			9DBCE595A110456B97E25E2F /* classListData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A49F8409BCF46C79C05727C /* classListData.json */; };
-			A002372E2FA5490B98B6605E /* ClimbRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432BD8D6D8A48199C304F07 /* ClimbRecordingView.swift */; };
-			A4E76A98A28D47B8AD6B3D7C /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC655B06706342B58AC78C20 /* PhotoLibraryView.swift */; };
-			0B701CD930BB427CA7C877F4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D7354A5F64E9FB97FE2E9 /* ProfileView.swift */; };
-			8A387262AB1C452B9523D4D2 /* ProgressDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3D47EA8ED4ACB96505FE7 /* ProgressDashboardView.swift */; };
-			B550F4E2807E4D8A9AD9768C /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77A4F413F64076A56DD58B /* CameraManager.swift */; };
-			B885C04B74074C1086CF0E6E /* ReadClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5F1D86DD440D19ADEBE24 /* ReadClimbRequest.swift */; };
-			C3CFBE2266C04B42942C0150 /* CreateRouteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61020C4614D94D469F2C9B69 /* CreateRouteRequest.swift */; };
-			CEB2EC60B0CC47A2A30E672E /* userSubmissionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E8BDC6B94834E30B895B982 /* userSubmissionData.json */; };
-			EB22076C93264F619A562F7A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C609BB1B5E4005B850A17B /* CameraView.swift */; };
-			E3F282C95D83436BBB808B61 /* assignmentInfoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 669CD40564FF401297B82DE9 /* assignmentInfoData.json */; };
-			FAC08B65BE554FBE8FBDCCDD /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6011AA4929D47D7949F9498 /* CameraPreviewView.swift */; };
-			FADA2CA247E047CFB26F8057 /* CreateClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66E880338444B78E5ED71D /* CreateClimbRequest.swift */; };
-			FBEBF5E49B9F480E85B6A0DA /* APIResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFCBCC81FCA45C28296D179 /* APIResponseManager.swift */; };
-			FBF7C8999A7B46269EDC2F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6707369788C4FEB98DF071D /* Assets.xcassets */; };
-			FE094099925E483F9807C3E3 /* DeleteUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13067E86DDCE46F7B871A1B2 /* DeleteUserRequest.swift */; };
+/* Begin PBXBuildFile section */
+		02056EDC67A14FA19016B7CF /* RouteAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C3D7505E14C30B84E1BBA /* RouteAnalysisView.swift */; };
+		0AD9C48F577142BE873EAA75 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD392B78BBD941EF8683F468 /* HomeView.swift */; };
+		0B701CD930BB427CA7C877F4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D7354A5F64E9FB97FE2E9 /* ProfileView.swift */; };
+		12C9D5C95609493C999F0DA8 /* ReadSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B5C4D44634294907024C4 /* ReadSessionRequest.swift */; };
+		1440FB3009204702874F0D5A /* HTTPSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356242CAD59144918A4041CE /* HTTPSetup.swift */; };
+		1EE2E76CC9C74146B773A89E /* AnalysisFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71230A25A945EF80936FFE /* AnalysisFeedbackView.swift */; };
+		2AEEE70289564FB9B02FED7D /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C6913EB8844DDBD5BFDB1 /* UpdateUserRequest.swift */; };
+		2CADDD1811A54E9E925E23B5 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFE54663A342B3ABD70528 /* CreateUserRequest.swift */; };
+		339208401461430BBED115FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562E0EA803C4F6B81D9BF80 /* LoginView.swift */; };
+		36DA3B9183AC40F784716382 /* routeFinderData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A5022F32FAF48EE8BB300EB /* routeFinderData.json */; };
+		4B8A372A8E0C481B8B01D646 /* ReadUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B7A83A043745E4905E1ECD /* ReadUserRequest.swift */; };
+		4E55149410054D9BB7F2F704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD12B9781440AC8F63AF6F /* ContentView.swift */; };
+		52B20462535A4254A7517E8E /* rock_climbing_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC4DB4BEE14651B4406463 /* rock_climbing_appApp.swift */; };
+		674365F67A7A41CC964D9873 /* UpdateClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7797BB93EB4A5BBC958E6E /* UpdateClimbRequest.swift */; };
+		740E5EF93B604DCEB6321DC5 /* ScanRouteHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D470E0C345C4B6DB7E8C952 /* ScanRouteHubView.swift */; };
+		782E91412F1C7FA800C6C2FE /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 38651EF02F1C100000AEFD55 /* GoogleSignIn */; };
+		782E91422F1C7FA800C6C2FE /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 38651EF22F1C100000AEFD55 /* GoogleSignInSwift */; };
+		7A420EA7C3C74E9FA3BF66CC /* courseDetailData.json in Resources */ = {isa = PBXBuildFile; fileRef = E2CB1E273E8841B5BF0E8A9B /* courseDetailData.json */; };
+		85BFE9D9589D47E58927C043 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 47915795712E47A9969313A9 /* Settings.bundle */; };
+		866E4F42846A45208EB3D1C3 /* DeleteClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4488FDF8C4B18803CC113 /* DeleteClimbRequest.swift */; };
+		8A387262AB1C452B9523D4D2 /* ProgressDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3D47EA8ED4ACB96505FE7 /* ProgressDashboardView.swift */; };
+		8D92A3D2BECA4A7490C27288 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1513055E844738385CA0F /* Item.swift */; };
+		8DEE45DFCD5648758E181A12 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A6825287493EB933FEE5 /* ModelData.swift */; };
+		9DBCE595A110456B97E25E2F /* classListData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A49F8409BCF46C79C05727C /* classListData.json */; };
+		A002372E2FA5490B98B6605E /* ClimbRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432BD8D6D8A48199C304F07 /* ClimbRecordingView.swift */; };
+		A4E76A98A28D47B8AD6B3D7C /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC655B06706342B58AC78C20 /* PhotoLibraryView.swift */; };
+		B550F4E2807E4D8A9AD9768C /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77A4F413F64076A56DD58B /* CameraManager.swift */; };
+		B885C04B74074C1086CF0E6E /* ReadClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5F1D86DD440D19ADEBE24 /* ReadClimbRequest.swift */; };
+		C3CFBE2266C04B42942C0150 /* CreateRouteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61020C4614D94D469F2C9B69 /* CreateRouteRequest.swift */; };
+		CEB2EC60B0CC47A2A30E672E /* userSubmissionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E8BDC6B94834E30B895B982 /* userSubmissionData.json */; };
+		E3F282C95D83436BBB808B61 /* assignmentInfoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 669CD40564FF401297B82DE9 /* assignmentInfoData.json */; };
+		EB22076C93264F619A562F7A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C609BB1B5E4005B850A17B /* CameraView.swift */; };
+		FAC08B65BE554FBE8FBDCCDD /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6011AA4929D47D7949F9498 /* CameraPreviewView.swift */; };
+		FADA2CA247E047CFB26F8057 /* CreateClimbRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66E880338444B78E5ED71D /* CreateClimbRequest.swift */; };
+		FBEBF5E49B9F480E85B6A0DA /* APIResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFCBCC81FCA45C28296D179 /* APIResponseManager.swift */; };
+		FBF7C8999A7B46269EDC2F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6707369788C4FEB98DF071D /* Assets.xcassets */; };
+		FE094099925E483F9807C3E3 /* DeleteUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13067E86DDCE46F7B871A1B2 /* DeleteUserRequest.swift */; };
 /* End PBXBuildFile section */
 
-	/* Begin PBXFileReference section */
-				38651E812F1BF0FA00AEFD55 /* rock-climbing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rock-climbing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-				0A49F8409BCF46C79C05727C /* classListData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classListData.json; sourceTree = "<group>"; };
-				0BFCBCC81FCA45C28296D179 /* APIResponseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseManager.swift; sourceTree = "<group>"; };
-				0D34BA499E8D41DF83BA349F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-				13067E86DDCE46F7B871A1B2 /* DeleteUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserRequest.swift; sourceTree = "<group>"; };
-				1432BD8D6D8A48199C304F07 /* ClimbRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbRecordingView.swift; sourceTree = "<group>"; };
-				1FA5F1D86DD440D19ADEBE24 /* ReadClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadClimbRequest.swift; sourceTree = "<group>"; };
-				22AC4DB4BEE14651B4406463 /* rock_climbing_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rock_climbing_appApp.swift; sourceTree = "<group>"; };
-				27BD12B9781440AC8F63AF6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-				356242CAD59144918A4041CE /* HTTPSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSetup.swift; sourceTree = "<group>"; };
-				3E8BDC6B94834E30B895B982 /* userSubmissionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userSubmissionData.json; sourceTree = "<group>"; };
-				4185A6825287493EB933FEE5 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-				47915795712E47A9969313A9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-				5562E0EA803C4F6B81D9BF80 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-				66E3D47EA8ED4ACB96505FE7 /* ProgressDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDashboardView.swift; sourceTree = "<group>"; };
-				669CD40564FF401297B82DE9 /* assignmentInfoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = assignmentInfoData.json; sourceTree = "<group>"; };
-				6A7797BB93EB4A5BBC958E6E /* UpdateClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClimbRequest.swift; sourceTree = "<group>"; };
-				77F4488FDF8C4B18803CC113 /* DeleteClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteClimbRequest.swift; sourceTree = "<group>"; };
-				811B5C4D44634294907024C4 /* ReadSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadSessionRequest.swift; sourceTree = "<group>"; };
-				814ACA29A2954AA8B7272EC6 /* rock-climbing-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "rock-climbing-app.entitlements"; sourceTree = "<group>"; };
-				8A8C6913EB8844DDBD5BFDB1 /* UpdateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
-				8D470E0C345C4B6DB7E8C952 /* ScanRouteHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRouteHubView.swift; sourceTree = "<group>"; };
-				9A5022F32FAF48EE8BB300EB /* routeFinderData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = routeFinderData.json; sourceTree = "<group>"; };
-				A5C609BB1B5E4005B850A17B /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-				A6707369788C4FEB98DF071D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-				B67D7354A5F64E9FB97FE2E9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-				B9B7A83A043745E4905E1ECD /* ReadUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadUserRequest.swift; sourceTree = "<group>"; };
-				BD392B78BBD941EF8683F468 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-				BF77A4F413F64076A56DD58B /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
-				ED66E880338444B78E5ED71D /* CreateClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClimbRequest.swift; sourceTree = "<group>"; };
-				61020C4614D94D469F2C9B69 /* CreateRouteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteRequest.swift; sourceTree = "<group>"; };
-				04DFE54663A342B3ABD70528 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
-				C6011AA4929D47D7949F9498 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
-				CB71230A25A945EF80936FFE /* AnalysisFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisFeedbackView.swift; sourceTree = "<group>"; };
-				CC655B06706342B58AC78C20 /* PhotoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryView.swift; sourceTree = "<group>"; };
-				E2CB1E273E8841B5BF0E8A9B /* courseDetailData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = courseDetailData.json; sourceTree = "<group>"; };
-				E5A1513055E844738385CA0F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-				FC0C3D7505E14C30B84E1BBA /* RouteAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnalysisView.swift; sourceTree = "<group>"; };
+/* Begin PBXFileReference section */
+		04DFE54663A342B3ABD70528 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
+		0A49F8409BCF46C79C05727C /* classListData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classListData.json; sourceTree = "<group>"; };
+		0BFCBCC81FCA45C28296D179 /* APIResponseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseManager.swift; sourceTree = "<group>"; };
+		0D34BA499E8D41DF83BA349F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13067E86DDCE46F7B871A1B2 /* DeleteUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserRequest.swift; sourceTree = "<group>"; };
+		1432BD8D6D8A48199C304F07 /* ClimbRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbRecordingView.swift; sourceTree = "<group>"; };
+		1FA5F1D86DD440D19ADEBE24 /* ReadClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadClimbRequest.swift; sourceTree = "<group>"; };
+		22AC4DB4BEE14651B4406463 /* rock_climbing_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rock_climbing_appApp.swift; sourceTree = "<group>"; };
+		27BD12B9781440AC8F63AF6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		356242CAD59144918A4041CE /* HTTPSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSetup.swift; sourceTree = "<group>"; };
+		38651E812F1BF0FA00AEFD55 /* rock-climbing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rock-climbing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8BDC6B94834E30B895B982 /* userSubmissionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userSubmissionData.json; sourceTree = "<group>"; };
+		4185A6825287493EB933FEE5 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		47915795712E47A9969313A9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		5562E0EA803C4F6B81D9BF80 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		61020C4614D94D469F2C9B69 /* CreateRouteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteRequest.swift; sourceTree = "<group>"; };
+		669CD40564FF401297B82DE9 /* assignmentInfoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = assignmentInfoData.json; sourceTree = "<group>"; };
+		66E3D47EA8ED4ACB96505FE7 /* ProgressDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDashboardView.swift; sourceTree = "<group>"; };
+		6A7797BB93EB4A5BBC958E6E /* UpdateClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClimbRequest.swift; sourceTree = "<group>"; };
+		77F4488FDF8C4B18803CC113 /* DeleteClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteClimbRequest.swift; sourceTree = "<group>"; };
+		811B5C4D44634294907024C4 /* ReadSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadSessionRequest.swift; sourceTree = "<group>"; };
+		814ACA29A2954AA8B7272EC6 /* rock-climbing-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "rock-climbing-app.entitlements"; sourceTree = "<group>"; };
+		8A8C6913EB8844DDBD5BFDB1 /* UpdateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
+		8D470E0C345C4B6DB7E8C952 /* ScanRouteHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRouteHubView.swift; sourceTree = "<group>"; };
+		9A5022F32FAF48EE8BB300EB /* routeFinderData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = routeFinderData.json; sourceTree = "<group>"; };
+		A5C609BB1B5E4005B850A17B /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		A6707369788C4FEB98DF071D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B67D7354A5F64E9FB97FE2E9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B9B7A83A043745E4905E1ECD /* ReadUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadUserRequest.swift; sourceTree = "<group>"; };
+		BD392B78BBD941EF8683F468 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BF77A4F413F64076A56DD58B /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		C6011AA4929D47D7949F9498 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		CB71230A25A945EF80936FFE /* AnalysisFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisFeedbackView.swift; sourceTree = "<group>"; };
+		CC655B06706342B58AC78C20 /* PhotoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryView.swift; sourceTree = "<group>"; };
+		E2CB1E273E8841B5BF0E8A9B /* courseDetailData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = courseDetailData.json; sourceTree = "<group>"; };
+		E5A1513055E844738385CA0F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		ED66E880338444B78E5ED71D /* CreateClimbRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClimbRequest.swift; sourceTree = "<group>"; };
+		FC0C3D7505E14C30B84E1BBA /* RouteAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAnalysisView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-			38651E832F1BF0FA00AEFD55 /* rock-climbing-app */ = {
-				isa = PBXGroup;
-				children = (
-					22AC4DB4BEE14651B4406463 /* rock_climbing_appApp.swift */,
-					E5A1513055E844738385CA0F /* Item.swift */,
-					D5551238A6B7478DB13E625A /* Views */,
-					73EABD04E8C14905A2ADB9EA /* Managers */,
-					419C32C450F44E6BB8DAE83C /* Preview Content */,
-					A6707369788C4FEB98DF071D /* Assets.xcassets */,
-					47915795712E47A9969313A9 /* Settings.bundle */,
-					0D34BA499E8D41DF83BA349F /* Info.plist */,
-					814ACA29A2954AA8B7272EC6 /* rock-climbing-app.entitlements */,
-				);
-				path = "rock-climbing-app";
-				sourceTree = "<group>";
-			};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		38651E7E2F1BF0FA00AEFD55 /* Frameworks */ = {
@@ -119,106 +100,122 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-			38651E782F1BF0FA00AEFD55 = {
-				isa = PBXGroup;
-				children = (
-					38651E832F1BF0FA00AEFD55 /* rock-climbing-app */,
-					38651E822F1BF0FA00AEFD55 /* Products */,
-				);
-				sourceTree = "<group>";
-			};
-				38651E822F1BF0FA00AEFD55 /* Products */ = {
-					isa = PBXGroup;
-					children = (
-						38651E812F1BF0FA00AEFD55 /* rock-climbing-app.app */,
-					);
-					name = Products;
-					sourceTree = "<group>";
-				};
-				419C32C450F44E6BB8DAE83C /* Preview Content */ = {
-					isa = PBXGroup;
-					children = (
-						4185A6825287493EB933FEE5 /* ModelData.swift */,
-						669CD40564FF401297B82DE9 /* assignmentInfoData.json */,
-						0A49F8409BCF46C79C05727C /* classListData.json */,
-						E2CB1E273E8841B5BF0E8A9B /* courseDetailData.json */,
-						9A5022F32FAF48EE8BB300EB /* routeFinderData.json */,
-						3E8BDC6B94834E30B895B982 /* userSubmissionData.json */,
-					);
-					path = "Preview Content";
-					sourceTree = "<group>";
-				};
-				73EABD04E8C14905A2ADB9EA /* Managers */ = {
-					isa = PBXGroup;
-					children = (
-						0BFCBCC81FCA45C28296D179 /* APIResponseManager.swift */,
-						BF77A4F413F64076A56DD58B /* CameraManager.swift */,
-						356242CAD59144918A4041CE /* HTTPSetup.swift */,
-						A8064FB4C3914AE784EDC162 /* CreateRequests */,
-						EA7FCA2FB5864C21914EEFB6 /* DeleteRequests */,
-						80A674C88F22433D81D21CA3 /* ReadRequests */,
-						BD340B053DA24E4B85EFE97A /* UpdateRequests */,
-					);
-					path = Managers;
-					sourceTree = "<group>";
-				};
-				80A674C88F22433D81D21CA3 /* ReadRequests */ = {
-					isa = PBXGroup;
-					children = (
-						1FA5F1D86DD440D19ADEBE24 /* ReadClimbRequest.swift */,
-						811B5C4D44634294907024C4 /* ReadSessionRequest.swift */,
-						B9B7A83A043745E4905E1ECD /* ReadUserRequest.swift */,
-					);
-					path = ReadRequests;
-					sourceTree = "<group>";
-				};
-				A8064FB4C3914AE784EDC162 /* CreateRequests */ = {
-					isa = PBXGroup;
-					children = (
-						ED66E880338444B78E5ED71D /* CreateClimbRequest.swift */,
-						61020C4614D94D469F2C9B69 /* CreateRouteRequest.swift */,
-						04DFE54663A342B3ABD70528 /* CreateUserRequest.swift */,
-					);
-					path = CreateRequests;
-					sourceTree = "<group>";
-				};
-				BD340B053DA24E4B85EFE97A /* UpdateRequests */ = {
-					isa = PBXGroup;
-					children = (
-						6A7797BB93EB4A5BBC958E6E /* UpdateClimbRequest.swift */,
-						8A8C6913EB8844DDBD5BFDB1 /* UpdateUserRequest.swift */,
-					);
-					path = UpdateRequests;
-					sourceTree = "<group>";
-				};
-				D5551238A6B7478DB13E625A /* Views */ = {
-					isa = PBXGroup;
-					children = (
-						CB71230A25A945EF80936FFE /* AnalysisFeedbackView.swift */,
-						C6011AA4929D47D7949F9498 /* CameraPreviewView.swift */,
-						A5C609BB1B5E4005B850A17B /* CameraView.swift */,
-						1432BD8D6D8A48199C304F07 /* ClimbRecordingView.swift */,
-						27BD12B9781440AC8F63AF6F /* ContentView.swift */,
-						BD392B78BBD941EF8683F468 /* HomeView.swift */,
-						5562E0EA803C4F6B81D9BF80 /* LoginView.swift */,
-						CC655B06706342B58AC78C20 /* PhotoLibraryView.swift */,
-						B67D7354A5F64E9FB97FE2E9 /* ProfileView.swift */,
-						66E3D47EA8ED4ACB96505FE7 /* ProgressDashboardView.swift */,
-						FC0C3D7505E14C30B84E1BBA /* RouteAnalysisView.swift */,
-						8D470E0C345C4B6DB7E8C952 /* ScanRouteHubView.swift */,
-					);
-					path = Views;
-					sourceTree = "<group>";
-				};
-				EA7FCA2FB5864C21914EEFB6 /* DeleteRequests */ = {
-					isa = PBXGroup;
-					children = (
-						77F4488FDF8C4B18803CC113 /* DeleteClimbRequest.swift */,
-						13067E86DDCE46F7B871A1B2 /* DeleteUserRequest.swift */,
-					);
-					path = DeleteRequests;
-					sourceTree = "<group>";
-				};
+		38651E782F1BF0FA00AEFD55 = {
+			isa = PBXGroup;
+			children = (
+				38651E832F1BF0FA00AEFD55 /* rock-climbing-app */,
+				38651E822F1BF0FA00AEFD55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		38651E822F1BF0FA00AEFD55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38651E812F1BF0FA00AEFD55 /* rock-climbing-app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38651E832F1BF0FA00AEFD55 /* rock-climbing-app */ = {
+			isa = PBXGroup;
+			children = (
+				22AC4DB4BEE14651B4406463 /* rock_climbing_appApp.swift */,
+				E5A1513055E844738385CA0F /* Item.swift */,
+				D5551238A6B7478DB13E625A /* Views */,
+				73EABD04E8C14905A2ADB9EA /* Managers */,
+				419C32C450F44E6BB8DAE83C /* Preview Content */,
+				A6707369788C4FEB98DF071D /* Assets.xcassets */,
+				47915795712E47A9969313A9 /* Settings.bundle */,
+				0D34BA499E8D41DF83BA349F /* Info.plist */,
+				814ACA29A2954AA8B7272EC6 /* rock-climbing-app.entitlements */,
+			);
+			path = "rock-climbing-app";
+			sourceTree = "<group>";
+		};
+		419C32C450F44E6BB8DAE83C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4185A6825287493EB933FEE5 /* ModelData.swift */,
+				669CD40564FF401297B82DE9 /* assignmentInfoData.json */,
+				0A49F8409BCF46C79C05727C /* classListData.json */,
+				E2CB1E273E8841B5BF0E8A9B /* courseDetailData.json */,
+				9A5022F32FAF48EE8BB300EB /* routeFinderData.json */,
+				3E8BDC6B94834E30B895B982 /* userSubmissionData.json */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		73EABD04E8C14905A2ADB9EA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0BFCBCC81FCA45C28296D179 /* APIResponseManager.swift */,
+				BF77A4F413F64076A56DD58B /* CameraManager.swift */,
+				356242CAD59144918A4041CE /* HTTPSetup.swift */,
+				A8064FB4C3914AE784EDC162 /* CreateRequests */,
+				EA7FCA2FB5864C21914EEFB6 /* DeleteRequests */,
+				80A674C88F22433D81D21CA3 /* ReadRequests */,
+				BD340B053DA24E4B85EFE97A /* UpdateRequests */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		80A674C88F22433D81D21CA3 /* ReadRequests */ = {
+			isa = PBXGroup;
+			children = (
+				1FA5F1D86DD440D19ADEBE24 /* ReadClimbRequest.swift */,
+				811B5C4D44634294907024C4 /* ReadSessionRequest.swift */,
+				B9B7A83A043745E4905E1ECD /* ReadUserRequest.swift */,
+			);
+			path = ReadRequests;
+			sourceTree = "<group>";
+		};
+		A8064FB4C3914AE784EDC162 /* CreateRequests */ = {
+			isa = PBXGroup;
+			children = (
+				ED66E880338444B78E5ED71D /* CreateClimbRequest.swift */,
+				61020C4614D94D469F2C9B69 /* CreateRouteRequest.swift */,
+				04DFE54663A342B3ABD70528 /* CreateUserRequest.swift */,
+			);
+			path = CreateRequests;
+			sourceTree = "<group>";
+		};
+		BD340B053DA24E4B85EFE97A /* UpdateRequests */ = {
+			isa = PBXGroup;
+			children = (
+				6A7797BB93EB4A5BBC958E6E /* UpdateClimbRequest.swift */,
+				8A8C6913EB8844DDBD5BFDB1 /* UpdateUserRequest.swift */,
+			);
+			path = UpdateRequests;
+			sourceTree = "<group>";
+		};
+		D5551238A6B7478DB13E625A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB71230A25A945EF80936FFE /* AnalysisFeedbackView.swift */,
+				C6011AA4929D47D7949F9498 /* CameraPreviewView.swift */,
+				A5C609BB1B5E4005B850A17B /* CameraView.swift */,
+				1432BD8D6D8A48199C304F07 /* ClimbRecordingView.swift */,
+				27BD12B9781440AC8F63AF6F /* ContentView.swift */,
+				BD392B78BBD941EF8683F468 /* HomeView.swift */,
+				5562E0EA803C4F6B81D9BF80 /* LoginView.swift */,
+				CC655B06706342B58AC78C20 /* PhotoLibraryView.swift */,
+				B67D7354A5F64E9FB97FE2E9 /* ProfileView.swift */,
+				66E3D47EA8ED4ACB96505FE7 /* ProgressDashboardView.swift */,
+				FC0C3D7505E14C30B84E1BBA /* RouteAnalysisView.swift */,
+				8D470E0C345C4B6DB7E8C952 /* ScanRouteHubView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA7FCA2FB5864C21914EEFB6 /* DeleteRequests */ = {
+			isa = PBXGroup;
+			children = (
+				77F4488FDF8C4B18803CC113 /* DeleteClimbRequest.swift */,
+				13067E86DDCE46F7B871A1B2 /* DeleteUserRequest.swift */,
+			);
+			path = DeleteRequests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,7 +231,7 @@
 			);
 			dependencies = (
 			);
-				name = "rock-climbing-app";
+			name = "rock-climbing-app";
 			packageProductDependencies = (
 				38651EF02F1C100000AEFD55 /* GoogleSignIn */,
 				38651EF22F1C100000AEFD55 /* GoogleSignInSwift */,
@@ -250,16 +247,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-					LastSwiftUpdateCheck = 1500;
-					LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					38651E802F1BF0FA00AEFD55 = {
-							CreatedOnToolsVersion = 15.0;
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-				buildConfigurationList = 38651E7C2F1BF0FA00AEFD55 /* Build configuration list for PBXProject "rock-climbing-app" */;
-				compatibilityVersion = "Xcode 15.0";
+			buildConfigurationList = 38651E7C2F1BF0FA00AEFD55 /* Build configuration list for PBXProject "rock-climbing-app" */;
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -271,7 +268,6 @@
 			packageReferences = (
 				38651EEF2F1C100000AEFD55 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
-				preferredProjectObjectVersion = 60;
 			productRefGroup = 38651E822F1BF0FA00AEFD55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -282,58 +278,58 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-			38651E7F2F1BF0FA00AEFD55 /* Resources */ = {
-				isa = PBXResourcesBuildPhase;
-				buildActionMask = 2147483647;
-				files = (
-					FBF7C8999A7B46269EDC2F48 /* Assets.xcassets in Resources */,
-					85BFE9D9589D47E58927C043 /* Settings.bundle in Resources */,
-					E3F282C95D83436BBB808B61 /* assignmentInfoData.json in Resources */,
-					9DBCE595A110456B97E25E2F /* classListData.json in Resources */,
-					7A420EA7C3C74E9FA3BF66CC /* courseDetailData.json in Resources */,
-					36DA3B9183AC40F784716382 /* routeFinderData.json in Resources */,
-					CEB2EC60B0CC47A2A30E672E /* userSubmissionData.json in Resources */,
-				);
-				runOnlyForDeploymentPostprocessing = 0;
-			};
+		38651E7F2F1BF0FA00AEFD55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF7C8999A7B46269EDC2F48 /* Assets.xcassets in Resources */,
+				85BFE9D9589D47E58927C043 /* Settings.bundle in Resources */,
+				E3F282C95D83436BBB808B61 /* assignmentInfoData.json in Resources */,
+				9DBCE595A110456B97E25E2F /* classListData.json in Resources */,
+				7A420EA7C3C74E9FA3BF66CC /* courseDetailData.json in Resources */,
+				36DA3B9183AC40F784716382 /* routeFinderData.json in Resources */,
+				CEB2EC60B0CC47A2A30E672E /* userSubmissionData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-			38651E7D2F1BF0FA00AEFD55 /* Sources */ = {
-				isa = PBXSourcesBuildPhase;
-				buildActionMask = 2147483647;
-				files = (
-					52B20462535A4254A7517E8E /* rock_climbing_appApp.swift in Sources */,
-					8D92A3D2BECA4A7490C27288 /* Item.swift in Sources */,
-					FBEBF5E49B9F480E85B6A0DA /* APIResponseManager.swift in Sources */,
-					B550F4E2807E4D8A9AD9768C /* CameraManager.swift in Sources */,
-					1440FB3009204702874F0D5A /* HTTPSetup.swift in Sources */,
-					FADA2CA247E047CFB26F8057 /* CreateClimbRequest.swift in Sources */,
-					C3CFBE2266C04B42942C0150 /* CreateRouteRequest.swift in Sources */,
-					2CADDD1811A54E9E925E23B5 /* CreateUserRequest.swift in Sources */,
-					866E4F42846A45208EB3D1C3 /* DeleteClimbRequest.swift in Sources */,
-					FE094099925E483F9807C3E3 /* DeleteUserRequest.swift in Sources */,
-					B885C04B74074C1086CF0E6E /* ReadClimbRequest.swift in Sources */,
-					12C9D5C95609493C999F0DA8 /* ReadSessionRequest.swift in Sources */,
-					4B8A372A8E0C481B8B01D646 /* ReadUserRequest.swift in Sources */,
-					674365F67A7A41CC964D9873 /* UpdateClimbRequest.swift in Sources */,
-					2AEEE70289564FB9B02FED7D /* UpdateUserRequest.swift in Sources */,
-					8DEE45DFCD5648758E181A12 /* ModelData.swift in Sources */,
-					1EE2E76CC9C74146B773A89E /* AnalysisFeedbackView.swift in Sources */,
-					FAC08B65BE554FBE8FBDCCDD /* CameraPreviewView.swift in Sources */,
-					EB22076C93264F619A562F7A /* CameraView.swift in Sources */,
-					A002372E2FA5490B98B6605E /* ClimbRecordingView.swift in Sources */,
-					4E55149410054D9BB7F2F704 /* ContentView.swift in Sources */,
-					0AD9C48F577142BE873EAA75 /* HomeView.swift in Sources */,
-					339208401461430BBED115FE /* LoginView.swift in Sources */,
-					A4E76A98A28D47B8AD6B3D7C /* PhotoLibraryView.swift in Sources */,
-					0B701CD930BB427CA7C877F4 /* ProfileView.swift in Sources */,
-					8A387262AB1C452B9523D4D2 /* ProgressDashboardView.swift in Sources */,
-					02056EDC67A14FA19016B7CF /* RouteAnalysisView.swift in Sources */,
-					740E5EF93B604DCEB6321DC5 /* ScanRouteHubView.swift in Sources */,
-				);
-				runOnlyForDeploymentPostprocessing = 0;
-			};
+		38651E7D2F1BF0FA00AEFD55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B20462535A4254A7517E8E /* rock_climbing_appApp.swift in Sources */,
+				8D92A3D2BECA4A7490C27288 /* Item.swift in Sources */,
+				FBEBF5E49B9F480E85B6A0DA /* APIResponseManager.swift in Sources */,
+				B550F4E2807E4D8A9AD9768C /* CameraManager.swift in Sources */,
+				1440FB3009204702874F0D5A /* HTTPSetup.swift in Sources */,
+				FADA2CA247E047CFB26F8057 /* CreateClimbRequest.swift in Sources */,
+				C3CFBE2266C04B42942C0150 /* CreateRouteRequest.swift in Sources */,
+				2CADDD1811A54E9E925E23B5 /* CreateUserRequest.swift in Sources */,
+				866E4F42846A45208EB3D1C3 /* DeleteClimbRequest.swift in Sources */,
+				FE094099925E483F9807C3E3 /* DeleteUserRequest.swift in Sources */,
+				B885C04B74074C1086CF0E6E /* ReadClimbRequest.swift in Sources */,
+				12C9D5C95609493C999F0DA8 /* ReadSessionRequest.swift in Sources */,
+				4B8A372A8E0C481B8B01D646 /* ReadUserRequest.swift in Sources */,
+				674365F67A7A41CC964D9873 /* UpdateClimbRequest.swift in Sources */,
+				2AEEE70289564FB9B02FED7D /* UpdateUserRequest.swift in Sources */,
+				8DEE45DFCD5648758E181A12 /* ModelData.swift in Sources */,
+				1EE2E76CC9C74146B773A89E /* AnalysisFeedbackView.swift in Sources */,
+				FAC08B65BE554FBE8FBDCCDD /* CameraPreviewView.swift in Sources */,
+				EB22076C93264F619A562F7A /* CameraView.swift in Sources */,
+				A002372E2FA5490B98B6605E /* ClimbRecordingView.swift in Sources */,
+				4E55149410054D9BB7F2F704 /* ContentView.swift in Sources */,
+				0AD9C48F577142BE873EAA75 /* HomeView.swift in Sources */,
+				339208401461430BBED115FE /* LoginView.swift in Sources */,
+				A4E76A98A28D47B8AD6B3D7C /* PhotoLibraryView.swift in Sources */,
+				0B701CD930BB427CA7C877F4 /* ProfileView.swift in Sources */,
+				8A387262AB1C452B9523D4D2 /* ProgressDashboardView.swift in Sources */,
+				02056EDC67A14FA19016B7CF /* RouteAnalysisView.swift in Sources */,
+				740E5EF93B604DCEB6321DC5 /* ScanRouteHubView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -462,7 +458,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B9G2ULB279;
+				DEVELOPMENT_TEAM = 464H3K5669;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
@@ -472,6 +468,7 @@
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app needs access to your local network to connect to the route-generation server.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to record audio during climbing sessions.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to save photos and videos of your climbing sessions to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to select photos of climbing routes for analysis.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -482,10 +479,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-					IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaehyeongpark.rock-climbing-app.rock-climbing-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lindsaycheng.rock-climbing-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -495,7 +492,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-					TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -517,6 +514,7 @@
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app needs access to your local network to connect to the route-generation server.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to record audio during climbing sessions.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to save photos and videos of your climbing sessions to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to select photos of climbing routes for analysis.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -527,7 +525,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-					IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lindsaycheng.rock-climbing-app.rock-climbing-app";
@@ -541,7 +539,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-					TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
