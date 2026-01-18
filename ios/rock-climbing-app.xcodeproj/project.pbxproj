@@ -12,7 +12,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 			38651E812F1BF0FA00AEFD55 /* rock-climbing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rock-climbing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		38651E812F1BF0FA00AEFD55 /* rock-climbing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rock-climbing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> 75242ed (fixes?)
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -57,6 +61,7 @@
 			);
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 			38651E822F1BF0FA00AEFD55 /* Products */ = {
 				isa = PBXGroup;
 				children = (
@@ -65,14 +70,24 @@
 				name = Products;
 				sourceTree = "<group>";
 			};
+=======
+		38651E822F1BF0FA00AEFD55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38651E812F1BF0FA00AEFD55 /* rock-climbing-app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+>>>>>>> 75242ed (fixes?)
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-			38651E802F1BF0FA00AEFD55 /* rock-climbing-app */ = {
-				isa = PBXNativeTarget;
-				buildConfigurationList = 38651E8E2F1BF0FC00AEFD55 /* Build configuration list for PBXNativeTarget "rock-climbing-app" */;
-				buildPhases = (
-					38651E7D2F1BF0FA00AEFD55 /* Sources */,
+		38651E802F1BF0FA00AEFD55 /* rock-climbing-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38651E8E2F1BF0FC00AEFD55 /* Build configuration list for PBXNativeTarget "rock-climbing-app" */;
+			buildPhases = (
+				38651E7D2F1BF0FA00AEFD55 /* Sources */,
 				38651E7E2F1BF0FA00AEFD55 /* Frameworks */,
 				38651E7F2F1BF0FA00AEFD55 /* Resources */,
 			);
@@ -186,7 +201,6 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 464H3K5669;
-				DEVELOPMENT_TEAM = 464H3K5669;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -249,7 +263,6 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 464H3K5669;
-				DEVELOPMENT_TEAM = 464H3K5669;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -277,7 +290,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 464H3K5669;
+				DEVELOPMENT_TEAM = B9G2ULB279;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
@@ -300,15 +313,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-					MACOSX_DEPLOYMENT_TARGET = 26.2;
-					PRODUCT_BUNDLE_IDENTIFIER = "com.jaehyeongpark.rock-climbing-app.rock-climbing-app";
-					PRODUCT_NAME = "$(TARGET_NAME)";
-					REGISTER_APP_GROUPS = YES;
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-					MACOSX_DEPLOYMENT_TARGET = 26.2;
-					PRODUCT_BUNDLE_IDENTIFIER = "com.jaehyeongpark.rock-climbing-app.rock-climbing-app";
-					PRODUCT_NAME = "$(TARGET_NAME)";
-					REGISTER_APP_GROUPS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaehyeongpark.rock-climbing-app.rock-climbing-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -317,7 +325,6 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.2;
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Debug;
@@ -330,7 +337,7 @@
 				CODE_SIGN_ENTITLEMENTS = "rock-climbing-app/rock-climbing-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 464H3K5669;
+				DEVELOPMENT_TEAM = B9G2ULB279;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
@@ -353,18 +360,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
-					MARKETING_VERSION = 1.0;
-					PRODUCT_BUNDLE_IDENTIFIER = "com.lindsaycheng.rock-climbing-app.rock-climbing-app";
-					PRODUCT_NAME = "$(TARGET_NAME)";
-					PROVISIONING_PROFILE_SPECIFIER = "";
-					REGISTER_APP_GROUPS = YES;
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
-					MARKETING_VERSION = 1.0;
-					PRODUCT_BUNDLE_IDENTIFIER = "com.lindsaycheng.rock-climbing-app.rock-climbing-app";
-					PRODUCT_NAME = "$(TARGET_NAME)";
-					PROVISIONING_PROFILE_SPECIFIER = "";
-					REGISTER_APP_GROUPS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lindsaycheng.rock-climbing-app.rock-climbing-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -373,7 +373,6 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.2;
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Release;

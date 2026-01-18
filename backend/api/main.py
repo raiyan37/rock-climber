@@ -1,24 +1,24 @@
 import io
 import os
+import time
+
 import cv2
 import imutils
 import numpy as np
-
 from dotenv import load_dotenv
-from fastapi import FastAPI, UploadFile, HTTPException, status
-from pydantic import BaseModel
-from google.oauth2 import id_token
+from fastapi import FastAPI, HTTPException, UploadFile, status
 from google.auth.transport import requests
+from google.oauth2 import id_token
+from pydantic import BaseModel
 from starlette.responses import StreamingResponse
 
-# Load environment variables from .env file
-load_dotenv()
-
 from src import config, image_utils, objects_detector
-from src.aruco_marker import ArucoMarker
-from src.route_generator import RouteGenerator
+from src.route_planner import plan_bottom_to_top_route
+
 from . import session_store
 from . import user_store
+
+load_dotenv()
 
 app = FastAPI(title="Climbing Crux Route Generator")
 
@@ -33,29 +33,31 @@ class GoogleAuthBody(BaseModel):
     idToken: str
 
 
+@app.get("/health")
+async def health() -> dict:
+    return {"message": "ok"}
+
+
 @app.post("/boulder/generate")
 async def generate_boulder(file: UploadFile) -> StreamingResponse:
     """
     Generate a boulder route from an image.
 
-    For now, the route planner assumes a simple bottom-to-top progression.
-    Generate a boulder route from an image.
-
-    For now, the route planner assumes a simple bottom-to-top progression.
+    - Detect holds with YOLO
+    - Plan a simple bottom-to-top route
+    - Return an annotated PNG overlay
     """
-    started = time.perf_counter()
     started = time.perf_counter()
     contents = await file.read()
 
     validate_file(file, contents)
-    print(f"[boulder/generate] received filename={file.filename} content_type={file.content_type} bytes={len(contents)}")
-    validate_file(file, contents)
-    print(f"[boulder/generate] received filename={file.filename} content_type={file.content_type} bytes={len(contents)}")
+    print(
+        f"[boulder/generate] received filename={file.filename} "
+        f"content_type={file.content_type} bytes={len(contents)}"
+    )
 
     np_img = np.frombuffer(contents, np.uint8)
     img = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
-    if img is None:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid image file")
     if img is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid image file")
 
@@ -64,21 +66,11 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
     try:
         detected_objects = objects_detector.detect(img)
     except FileNotFoundError as exc:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(exc)) from exc
+    except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(exc),
-        ) from exc
-
-    try:
-        route_holds = plan_bottom_to_top_route(
-            detected_objects,
-            img_width=img.shape[1],
-            img_height=img.shape[0],
-        detected_objects = objects_detector.detect(img)
-    except FileNotFoundError as exc:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(exc),
+            detail=f"Object detection failed: {exc}",
         ) from exc
 
     try:
@@ -88,38 +80,8 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
             img_height=img.shape[0],
         )
     except ValueError as exc:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=str(exc)
-        ) from exc
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
 
-    img = image_utils.draw_bboxes(
-        img=img,
-        detected_objects=detected_objects,
-        bbox_color=config.BBOX_COLOR,
-        bbox_center_color=config.BBOX_CENTER_COLOR,
-        line_width=config.LINE_WIDTH,
-        draw_labels=False,
-        draw_centers=False,
-    )
-
-    img = image_utils.draw_bboxes(
-        img=img,
-        detected_objects=route_holds,
-        bbox_color=config.PROBLEM_STEP_BBOX_COLOR,
-        bbox_center_color=config.BBOX_CENTER_COLOR,
-        line_width=config.LINE_WIDTH,
-        draw_labels=False,
-        draw_centers=True,
-    )
-
-    for start_hold, end_hold in zip(route_holds, route_holds[1:]):
-        img = image_utils.draw_line(
-            img=img,
-            start_point=start_hold.center,
-            end_point=end_hold.center,
-            color=config.ROUTE_LINE_COLOR,
-            line_width=config.ROUTE_LINE_WIDTH,
     img = image_utils.draw_bboxes(
         img=img,
         detected_objects=detected_objects,
@@ -150,7 +112,6 @@ async def generate_boulder(file: UploadFile) -> StreamingResponse:
         )
 
     _, im_png = cv2.imencode(".png", img)
-    print(f"[boulder/generate] done in {time.perf_counter() - started:.2f}s")
     print(f"[boulder/generate] done in {time.perf_counter() - started:.2f}s")
     return StreamingResponse(io.BytesIO(im_png.tobytes()), media_type="image/png")
 
@@ -234,14 +195,15 @@ def authenticate_google(body: GoogleAuthBody) -> dict:
     }
 
 
-def validate_file(file: UploadFile) -> None:
+def validate_file(file: UploadFile, contents: bytes) -> None:
     if file.content_type not in config.ACCEPTED_MIME_TYPES:
         raise HTTPException(
             status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
             detail="Unsupported file type",
         )
 
-    if len(contents) > config.MAXIMUM_FILE_SIZE:
-        raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="Too large")
+    if not contents:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Empty file")
+
     if len(contents) > config.MAXIMUM_FILE_SIZE:
         raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="Too large")
