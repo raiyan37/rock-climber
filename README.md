@@ -1,5 +1,7 @@
 # Send
 
+![SEND App Promotional Graphic](send.jpg)
+
 A climbing app where you snap a photo of any wall and instantly see optimal routes mapped out using OpenCV. Track your climbs, record attempts, and build your climbing portfolio with computer vision route detection.
 
 Devpost: https://devpost.com/software/send-lc1vy4#updates
